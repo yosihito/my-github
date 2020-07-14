@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>カロリー管理ノート</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ダイエットや減量をすると言っても、基礎代謝　活動代謝を知らなければ
+　 食事を減らしているのに　体型がなかなか変わらないなんてことに。
+　 本サイトでは、基礎代謝　活動代謝を把握し、それを元に、食事の内容　カロリーを記録して、日々ダイエット
+　 減量に役立ててもらうのが目的です。">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="image-text">
+        <div class="tdee_image">
+            <img src="http://get.secret.jp/pt/file/1592830537.jpg" alt="ダンベルとプロテイン画像です">
+        </div>
+        <div class="text">カロリー管理ノート</div>
+    </div>
+
+
+
+    <div class="tdee-wrap">
+        <div class="discription">
+            <p>このサイトの使い方<br> １、計算機に必要事項を記入し、基礎代謝　活動代謝を把握する
+                <br> ２、各食事の食べたものを入力し、画像もあれば選択して記録するを押す
+                <br> ３、各食事の記録を終えたら、カレンダーへ移動するを押し、別ページへ移動する
+                <br> ４、記録した日をクリックすると、各食事の食べた物とカロリー画像も記録して
+                <br>いれば画像も表示される
+                <p><small>＊カロリーを計算して、活動代謝より多ければオーバーカロリー（太っていく）なので、カロリーを目視することにより
+    食べ過ぎ防止に役立ててください</small></p>
+            </p>
+        </div>
+        <div id="tdee_calculator" class="tdee">
+            <div class="tdee__inner">
+                <div class="tdee__field">
+                    <p class="tdee__title">1. 性別を選択してください</p>
+                    <div class="tdee__block"><label for="tdee_female"><p><input id="tdee_female" class="tdee__radio" checked name="tdee_gender"  type="radio" value="female">女性</p></label></div>
+                    <div><label for="tdee_male"><p><input id="tdee_male" class="tdee__radio" name="tdee_gender" type="radio" value="male">男性</p></label></div>
+                </div>
+                <div class="tdee__field">
+                    <p class="tdee__title">2. 年齢を入力してください</p>
+                    <div class="tdee__block"><label>年齢：<p><input class="tdee__text" max="100" min="1" name="tdee_age"  type="number"placeholder="30" > 歳</p></label></div>
+                </div>
+                <div class="tdee__field">
+                    <p class="tdee__title">3. 身長と体重を入力してください</p>
+                    <div class="tdee__block"><label>身長：<p><input class="tdee__text" max="300" min="80" name="tdee_height"  type="number" placeholder="160" > cm</p></label></div>
+                    <div><label>体重：<p><input class="tdee__text" max="300" min="30" name="tdee_weight"  type="number" placeholder="50"> kg</p></label></div>
+                </div>
+                <div class="tdee__field">
+                    <p class="tdee__title">4. 運動量について教えてください</p>
+                    <div class="tdee__block">
+                        <div class="tdee_workout1"><label for="tdee_level1"><p><input id="tdee_level1" class="tdee__radio" checked name="tdee_workout" required="" type="radio" value="1.2">普段は全く運動をしていない</p></label></div>
+                        <div class="tdee_workout"><label for="tdee_level2"><p><input id="tdee_level2" class="tdee__radio" name="tdee_workout" type="radio" value="1.375">1回～2回/週 程度の運動</p></label></div>
+                        <div class="tdee_workout"><label for="tdee_level3"><p><input id="tdee_level3" class="tdee__radio" name="tdee_workout" type="radio" value="1.55">2回～3回/週 程度の運動</p></label></div>
+                        <div class="tdee_workout"><label for="tdee_level4"><p><input id="tdee_level4" class="tdee__radio" name="tdee_workout" type="radio" value="1.725">3回～4回/週 程度の運動</p></label></div>
+                        <div><label for="tdee_level5"><p><input id="tdee_level5" class="tdee__radio" name="tdee_workout" type="radio" value="1.9">ほぼ毎日激しい運動をしている</p></label></div>
+                    </div>
+                </div>
+                <div class="tdee__field tdee__field--button">
+                    <button class="btn btn-primary tdee__button tdee__button--sp jsTdeeCalculate" name="tdee_calculate" type="button">結果をみる</button></div>
+                <div class="tdee__field"><label>基礎代謝：<span class="tdee__resultText jsTdeeResultBase">—-</span> kcal</label>
+                    <div class="tdee"><label>ＴＤＥＥ(活動代謝)：<span class="tdee__resultText jsTdeeResultTdee">—-</span> kcal</label></div>
+                    <p><small>＊TDEE(活動代謝)・・・日常生活での動作や、運動やトレーニングをしたりなど<br>身体を動かすときに使われる消費エネルギーのこと</small></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="discription">
+        <p>入力は一品ずつ入力してください</p>
+        <p><small>＊表示されるカロリーは100g当たりの数値</small></p>
+    </div>
+    <div class="meal-container">
+        <div class="meal-content">
+            <p>朝食</p>
+            <div class="table-meal">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="text-center">食事内容</td>
+                    </tr>
+                    <tr>
+                        <td class="meal_breakfast" contentEditable="true"></td>
+                    </tr>
+                </table>
+                <div class="btn-meal">
+                    <input type="button" class="btn btn_breakfast btn-primary" value="記録する">
+                    <input type="file" id="breakfast_file" name="file">
+                </div>
+            </div>
+        </div>
+
+        <div class="meal-content">
+            <p>昼食</p>
+            <div class="table-meal">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="text-center">食事内容</td>
+                    </tr>
+                    <tr>
+                        <td class="meal_lunch" contentEditable="true"></td>
+                    </tr>
+                </table>
+                <div class="btn-meal">
+                    <input type="button" class="btn btn_lunch btn-primary" value="記録する">
+                    <input type="file" id="lunch_file" name="file" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="meal-content">
+            <p>夕食</p>
+            <div class="table-meal">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="text-center">食事内容</td>
+                    </tr>
+                    <tr>
+                        <td class="meal_dinner" contentEditable="true"></td>
+                    </tr>
+                </table>
+                <div class="btn-meal">
+                    <input type="button" class="btn btn_dinner btn-primary" value="記録する">
+                    <input type="file" id="dinner_file" name="file">
+                </div>
+            </div>
+        </div>
+
+        <div class="meal-content">
+            <p>間食</p>
+            <div class="table-meal">
+                <table class="table table-bordered">
+                    <tr>
+                        <td class="text-center">食事内容</td>
+                    </tr>
+                    <tr>
+                        <td class="meal_snack" contentEditable="true"></td>
+                    </tr>
+                </table>
+                <div class="btn-meal">
+                    <input type="button" class="btn btn_snack btn-primary" value="記録する">
+                    <input type="file" id="snack_file" name="file">
+                </div>
+            </div>
+        </div>
+        <div class="discription">
+            <p>全ての記録を終えたらカレンダーへ移動するを押してみましょう</p>
+        </div>
+        <div class='move_calemdar'>
+            <input type="button" class="btn btn_calemdar btn-info" value="カレンダーへ移動する">
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDJeBT_4vEfvK7uI8hmxiTx3KB5n76Kf1A",
+            authDomain: "calorie-record.firebaseapp.com",
+            databaseURL: "https://calorie-record.firebaseio.com",
+            projectId: "calorie-record",
+            storageBucket: "calorie-record.appspot.com",
+            messagingSenderId: "G-BK74BQJ34T",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
