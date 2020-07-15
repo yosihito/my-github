@@ -1,0 +1,113 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.image-text {
+    position: relative;
+}
+
+.tdee_image {
+    background-size: cover;
+    max-width: 100%;
+    /* 横幅の90% */
+    height: 50%;
+
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 80%;
+    color: white;
+    opacity: 0.8;
+    font-size: 4em;
+    line-height: 130%;
+}
+
+.discription {
+    width: 100%
+}
+
+.tdee__field {
+    text-align: center;
+}
+
+.tdee_image img {
+    width: 100%;
+}
+
+.tdee__field {
+    background: #f1f1f1;
+    margin-bottom: .5em;
+    padding: .5em 1em;
+}
+
+.tdee__title {
+    margin-bottom: .5em;
+    display: block;
+    font-weight: bold;
+}
+
+.tdee__title p {
+    margin-top: 0;
+}
+
+.tdee__block {
+    margin-left: 1.em;
+}
+
+.tdee_workout {
+    margin-right: 3.5rem;
+}
+
+.tdee_workout1 {
+    margin-right: 0.9rem;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.text-center {
+    background-color: #f1f1f1;
+}
+
+.meal {
+    width: 100%
+}
+
+.btn-meal {
+    margin: 60px 0 20px 0;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 0 0 #666;
+    width: 100%;
+}
+
+.btn:active {
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+}
+
+
+.meal-container {
+    width: 100%;
+
+}
+
+.meal-content {
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width:480px) {
+    .text {
+        font-size: 2em;
+    }
+}
