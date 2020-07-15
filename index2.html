@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Monthly.css">
+    <title>calendar</title>
+
+</head>
+
+<body>
+    <button class="btn_left" type="button">
+   <i id="prev" class="fas fa-angle-double-left fa-4x"></i>  
+ </button>
+    <button class="btn_right" type="button">
+     <i id="next" class="fas fa-angle-double-right fa-4x"></i>
+ </button>
+    <!-- カレンダーのコンテナ -->
+    <div id="calendar"></div>
+    <div id='move'>
+        <input type="button" class="btn btn-move btn-light" value="前ページへ移動する">
+    </div>
+    <!-- モーダルエリアここから -->
+    <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+            <div class="date">
+
+            </div>
+            <div class="private">
+
+            </div>
+            <div class="total">
+
+            </div>
+            <div class="breakfast">
+
+            </div>
+            <div class="lunch">
+
+            </div>
+            <div class="dinner">
+
+            </div>
+            <div class="snack">
+
+            </div>
+            <div id="closeModal" class="closeModal">
+
+            </div>
+        </div>
+    </section>
+    <!-- モーダルエリアここまで -->
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDJeBT_4vEfvK7uI8hmxiTx3KB5n76Kf1A",
+            authDomain: "calorie-record.firebaseapp.com",
+            databaseURL: "https://calorie-record.firebaseio.com",
+            projectId: "calorie-record",
+            storageBucket: "calorie-record.appspot.com",
+            messagingSenderId: "G-BK74BQJ34T",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="Monthly.js"></script>
+</body>
+
+</html>
